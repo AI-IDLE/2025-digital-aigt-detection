@@ -1,5 +1,7 @@
 # 2025-digital-aigt-detection
 
+[에이아이들_최종포스터.pdf](https://github.com/user-attachments/files/21779202/_.pdf)
+
 ## 데이터 경로
 
 `./data/original_data` 폴더에 대회 데이터 원본 파일이 위치합니다:
