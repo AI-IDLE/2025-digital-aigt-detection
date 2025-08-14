@@ -1,6 +1,6 @@
 # 2025-digital-aigt-detection
 
-[에이아이들_최종포스터.pdf](https://github.com/user-attachments/files/21779202/_.pdf)
+<img width="1984" height="3969" alt="Image" src="https://github.com/user-attachments/assets/3a8b0e8b-9565-46c4-884f-c519096edcfa" />
 
 ## 데이터 경로
 
