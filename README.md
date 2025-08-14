@@ -179,10 +179,10 @@
   cd 2025-digital-aigt-detection/train&inference/gemma/fold0
   !ipython gemma_fold0.ipynb
   ```
+---
 
 ## 대회 결과 및 고찰
 
----
 
    약 1달간 진행된 예선과 본선을 거쳐 최종적으로 전국 1위, 과학기술정보통신부 장관상을 수상하였습니다.
 
