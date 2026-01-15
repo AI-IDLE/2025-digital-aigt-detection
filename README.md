@@ -2,6 +2,62 @@
 
 <img width="1984" height="3969" alt="Image" src="https://github.com/user-attachments/assets/3a8b0e8b-9565-46c4-884f-c519096edcfa" />
 
+## 폴더 구조
+
+```
+2025-digital-aigt-detection/
+├── data/                          # 데이터 관련 폴더
+│   ├── original_data/             # 원본 데이터
+│   │   ├── train.csv
+│   │   ├── test.csv
+│   │   └── sample_submission.csv
+│   ├── kfold_csv/                 # 전처리된 K-fold 데이터
+│   └── data_preprocess.ipynb      # 데이터 전처리 노트북
+│
+├── ensemble/                      # 앙상블 관련 폴더
+│   ├── data/
+│   │   ├── val_ensemble_folding/  # Validation 추론 결과 (16개)
+│   │   ├── test_ensemble_folding/ # Test 추론 결과 (16개)
+│   │   ├── meta_train.csv
+│   │   └── meta_test.csv
+│   └── ensemble.ipynb             # 앙상블 실행 노트북
+│
+├── module/                        # 커스텀 모듈
+│   ├── gemma3_seqcls_infonce.py
+│   └── qwen3_seqcls_infonce.py
+│
+├── train&inference/               # 학습 및 추론 코드
+│   ├── gemma/                     # GEMMA 모델
+│   │   ├── fold0/
+│   │   │   ├── gemma_fold0.ipynb
+│   │   │   └── gemma_model0/      # LoRA 파라미터
+│   │   ├── fold1/
+│   │   ├── fold2/
+│   │   └── fold3/
+│   ├── kanana/                    # KANANA 모델
+│   │   ├── fold0/
+│   │   ├── fold1/
+│   │   ├── fold2/
+│   │   └── fold3/
+│   ├── qwen/                      # QWEN3 모델
+│   │   ├── fold0/
+│   │   ├── fold1/
+│   │   ├── fold2/
+│   │   └── fold3/
+│   └── xone/                      # EXAONE 모델
+│       ├── fold0/
+│       ├── fold1/
+│       ├── fold2/
+│       └── fold3/
+│
+├── README.md                      # 프로젝트 설명
+├── final_submission.csv           # 최종 제출 파일
+├── requirements.txt               # 필요 패키지 목록
+└── 디지털경진대회_최종발표자료.pdf  # 최종 발표 자료
+```
+
+---
+
 ## 데이터 경로
 
 `./data/original_data` 폴더에 대회 데이터 원본 파일이 위치합니다:
@@ -32,86 +88,12 @@
 
 ---
 
-## 사용한 Pretrained 오픈소스 모델
-
-### **1. Kanana**
-- **모델명**: `kakaocorp/kanana-1.5-8b-instruct-2505`  
-- **모델 URL**: [https://huggingface.co/kakaocorp/kanana-1.5-8b-instruct-2505](https://huggingface.co/kakaocorp/kanana-1.5-8b-instruct-2505)  
-- **Citation**:
-```bibtex
-@misc{kananallmteam2025kananacomputeefficientbilinguallanguage,
-      title={Kanana: Compute-efficient Bilingual Language Models}, 
-      author={Kanana LLM Team and Yunju Bak and Hojin Lee and Minho Ryu and Jiyeon Ham and Seungjae Jung and Daniel Wontae Nam and Taegyeong Eo and Donghun Lee and Doohae Jung and Boseop Kim and Nayeon Kim and Jaesun Park and Hyunho Kim and Hyunwoong Ko and Changmin Lee and Kyoung-Woon On and Seulye Baeg and Junrae Cho and Sunghee Jung and Jieun Kang and EungGyun Kim and Eunhwa Kim and Byeongil Ko and Daniel Lee and Minchul Lee and Miok Lee and Shinbok Lee and Gaeun Seo},
-      year={2025},
-      eprint={2502.18934},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2502.18934}, 
-}
-````
-
----
-
-### **2. EXAONE**
-
-* **모델명**: `LGAI-EXAONE/EXAONE-3.5-32B-Instruct`
-* **모델 URL**: [https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-32B-Instruct](https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-32B-Instruct)
-* **Citation**:
-
-```bibtex
-@article{exaone-3.5,
-  title={EXAONE 3.5: Series of Large Language Models for Real-world Use Cases},
-  author={LG AI Research},
-  journal={arXiv preprint arXiv:https://arxiv.org/abs/2412.04862},
-  year={2024}
-}
-```
-
----
-
-### **3. GEMMA**
-
-* **모델명**: `google/gemma-3-12b-it`
-* **모델 URL**: [https://huggingface.co/google/gemma-3-12b-it](https://huggingface.co/google/gemma-3-12b-it)
-* **Citation**:
-
-```bibtex
-@article{gemma_2025,
-    title={Gemma 3},
-    url={https://goo.gle/Gemma3Report},
-    publisher={Kaggle},
-    author={Gemma Team},
-    year={2025}
-}
-```
-
----
-
-### **4. QWEN3**
-
-* **모델명**: `Qwen/Qwen3-14B`
-* **모델 URL**: [https://huggingface.co/Qwen/Qwen3-14B](https://huggingface.co/Qwen/Qwen3-14B)
-* **Citation**:
-
-```bibtex
-@misc{qwen3technicalreport,
-      title={Qwen3 Technical Report}, 
-      author={Qwen Team},
-      year={2025},
-      eprint={2505.09388},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2505.09388}, 
-}
-```
-
----
-
 ## 사용 환경
 
 * **Jupyter Lab (python 3.11)**
 * **GPU: NVIDIA H100 80GB**
 * **OS: Ubuntu 22.04** 
+
 ---
 
 ## 코드 흐름 요약
@@ -179,6 +161,82 @@
   cd 2025-digital-aigt-detection/train&inference/gemma/fold0
   !ipython gemma_fold0.ipynb
   ```
+
+---
+
+## 사용한 Pretrained 오픈소스 모델
+
+### **1. Kanana**
+- **모델명**: `kakaocorp/kanana-1.5-8b-instruct-2505`  
+- **모델 URL**: [https://huggingface.co/kakaocorp/kanana-1.5-8b-instruct-2505](https://huggingface.co/kakaocorp/kanana-1.5-8b-instruct-2505)  
+- **Citation**:
+```bibtex
+@misc{kananallmteam2025kananacomputeefficientbilinguallanguage,
+      title={Kanana: Compute-efficient Bilingual Language Models}, 
+      author={Kanana LLM Team and Yunju Bak and Hojin Lee and Minho Ryu and Jiyeon Ham and Seungjae Jung and Daniel Wontae Nam and Taegyeong Eo and Donghun Lee and Doohae Jung and Boseop Kim and Nayeon Kim and Jaesun Park and Hyunho Kim and Hyunwoong Ko and Changmin Lee and Kyoung-Woon On and Seulye Baeg and Junrae Cho and Sunghee Jung and Jieun Kang and EungGyun Kim and Eunhwa Kim and Byeongil Ko and Daniel Lee and Minchul Lee and Miok Lee and Shinbok Lee and Gaeun Seo},
+      year={2025},
+      eprint={2502.18934},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2502.18934}, 
+}
+```
+
+---
+
+### **2. EXAONE**
+
+* **모델명**: `LGAI-EXAONE/EXAONE-3.5-32B-Instruct`
+* **모델 URL**: [https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-32B-Instruct](https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-32B-Instruct)
+* **Citation**:
+
+```bibtex
+@article{exaone-3.5,
+  title={EXAONE 3.5: Series of Large Language Models for Real-world Use Cases},
+  author={LG AI Research},
+  journal={arXiv preprint arXiv:https://arxiv.org/abs/2412.04862},
+  year={2024}
+}
+```
+
+---
+
+### **3. GEMMA**
+
+* **모델명**: `google/gemma-3-12b-it`
+* **모델 URL**: [https://huggingface.co/google/gemma-3-12b-it](https://huggingface.co/google/gemma-3-12b-it)
+* **Citation**:
+
+```bibtex
+@article{gemma_2025,
+    title={Gemma 3},
+    url={https://goo.gle/Gemma3Report},
+    publisher={Kaggle},
+    author={Gemma Team},
+    year={2025}
+}
+```
+
+---
+
+### **4. QWEN3**
+
+* **모델명**: `Qwen/Qwen3-14B`
+* **모델 URL**: [https://huggingface.co/Qwen/Qwen3-14B](https://huggingface.co/Qwen/Qwen3-14B)
+* **Citation**:
+
+```bibtex
+@misc{qwen3technicalreport,
+      title={Qwen3 Technical Report}, 
+      author={Qwen Team},
+      year={2025},
+      eprint={2505.09388},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.09388}, 
+}
+```
+
 ---
 
 ## 대회 결과 및 고찰
